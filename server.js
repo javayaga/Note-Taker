@@ -8,10 +8,10 @@ const app = express();
 // Set PORT //
 const PORT = process.env.PORT || 8080;
 
-
 // Set up Express to handle data parsing //
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 
 // HTML ROUTES //
@@ -24,6 +24,20 @@ app.get("/", (req, res) => {
 app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
 });
+
+
+
+// API Routes //
+// GET //
+app.get("/api/notes", function(req, res) {
+    res.json("./Develop/db/db.json");
+})
+
+// POST //
+app.post("/api/notes", function(re, res) {
+
+    const newNote = req.body;
+})
 
 // server listening //
 app.listen(PORT, function() {
