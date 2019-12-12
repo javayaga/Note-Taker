@@ -7,8 +7,18 @@ const app = express();
 // set port //
 const PORT = process.env.PORT || 8080;
 
+
 // set up express to handle data parsing //
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
+// routes //
+
+
+
+
+// server listening //
+app.listen(PORT, function() {
+    console.log(`App listening on PORT ${PORT}`);
+});
