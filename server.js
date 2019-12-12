@@ -1,22 +1,29 @@
-// dependencies //
+// DEPENDENCIES //
 const express = require("express");
+const path = require("path");
 
-// express configuration //
+// Express configuration //
 const app = express();
 
-// set port //
+// Set PORT //
 const PORT = process.env.PORT || 8080;
 
 
-// set up express to handle data parsing //
+// Set up Express to handle data parsing //
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// routes //
+// HTML ROUTES //
+//  Index //
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
+}); 
 
-
-
+// Notes //
+app.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
+});
 
 // server listening //
 app.listen(PORT, function() {
