@@ -1,6 +1,7 @@
 // DEPENDENCIES //
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 
 // Express configuration //
 const app = express();
@@ -14,28 +15,26 @@ app.use(express.json());
 
 
 
-// HTML ROUTES //
+// ========= HTML ROUTES ========= //
 //  Index //
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "Develop", "public", "index.html"));
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 }); 
 
 // Notes //
 app.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "Develop", "public", "notes.html"));
+    res.sendFile(path.join(__dirname, "public", "notes.html"));
 });
 
-
-
-// API Routes //
+// ======= API Routes ========= //
 // GET //
+// testing api //
 app.get("/api/", function(req, res) {
-    res.json({ message: "hooray!!" });
+    res.send({ message: "hooray!! api works!" });
 })
 
-
 app.get("/api/notes", function(req, res) {
-    res.json("Develop", "db", "db.json");
+    res.sendFile(path.join(__dirname, "db", "db.json"));
 })
 
 // POST //

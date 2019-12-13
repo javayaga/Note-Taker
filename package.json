@@ -1,25 +1,15 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "an application that can be used to write, save, and delete notes",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/javayaga/Note-Taker.git"
-  },
-  "author": "Alice Russell",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/javayaga/Note-Taker/issues"
-  },
-  "homepage": "https://github.com/javayaga/Note-Taker#readme",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "Express": "^3.0.1",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {}
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
 }
