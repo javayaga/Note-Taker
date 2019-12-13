@@ -17,26 +17,35 @@ app.use(express.json());
 // HTML ROUTES //
 //  Index //
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
+    res.sendFile(path.join(__dirname, "Develop", "public", "index.html"));
 }); 
 
 // Notes //
 app.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
+    res.sendFile(path.join(__dirname, "Develop", "public", "notes.html"));
 });
 
 
 
 // API Routes //
 // GET //
+app.get("/api/", function(req, res) {
+    res.json({ message: "hooray!!" });
+})
+
+
 app.get("/api/notes", function(req, res) {
-    res.json("./Develop/db/db.json");
+    res.json("Develop", "db", "db.json");
 })
 
 // POST //
-app.post("/api/notes", function(re, res) {
+app.post("/api/notes", function(req, res) {
 
     const newNote = req.body;
+
+    console.log(newNote);
+
+    res.json(newNote);
 })
 
 // server listening //
