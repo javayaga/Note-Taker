@@ -45,7 +45,7 @@ app.post("/api/notes", function(req, res) {
     console.log(newNote);
 
     res.json(newNote);
-})
+});
 
 // server listening //
 app.listen(PORT, function() {
